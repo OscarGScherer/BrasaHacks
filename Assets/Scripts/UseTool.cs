@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class UseTool : MonoBehaviour
 {
+    public GameObject highlightBlock;
     public GameObject cursor;
     public GameObject hands;
     Vector3 mPos;
@@ -13,13 +14,17 @@ public class UseTool : MonoBehaviour
     public Tilemap elevation;
     public Tilemap colliders;
 
+    Vector3Int playerCell;
+
     void Update()
     {
-        mPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        UpdateCursorPosition(mPos);
-        cellHovered = Vector3Int.FloorToInt(cursor.transform.position);
+        mPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 1);
+        //UpdateCursorPosition(mPos);
+        cellHovered = Vector3Int.FloorToInt(mPos);
+        highlightBlock.transform.position = new Vector2(cellHovered.x + .5f, cellHovered.y + .5f);
+        playerCell = Vector3Int.FloorToInt(transform.position);
 
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0) && Vector3Int.Distance(playerCell, cellHovered)<=1.5)
         {
             StartCoroutine(BreakCoroutine(cellHovered));
         }
@@ -47,7 +52,7 @@ public class UseTool : MonoBehaviour
         yDiff = (yDiff > .5f) ? 1 : (yDiff < -.5f) ? -1 : 0;
         xDiff = (xDiff > .5f) ? 1 : (xDiff < -.5f) ? -1 : 0;
 
-        float angle = Vector2.SignedAngle(Vector2.up, new Vector2(xDiff, yDiff));
+        float angle = Vector2.SignedAngle(Vector2.up, new Vector2(cellHovered.x, cellHovered.y));
 
         hands.transform.rotation = Quaternion.Euler(0, 0, angle);
         cursor.transform.position = pPos + new Vector3(xDiff, yDiff, 0);

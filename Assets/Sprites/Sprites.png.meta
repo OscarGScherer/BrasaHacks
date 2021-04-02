@@ -10,7 +10,7 @@ TextureImporter:
     second: rock
   - first:
       213: 7061801754131594114
-    second: player
+    second: knight
   - first:
       213: -7377819553374844296
     second: grass_block
@@ -52,16 +52,16 @@ TextureImporter:
     second: char_walk_rl_1
   - first:
       213: 1579531326687846966
-    second: char_idle_down
+    second: char_idle_down_0
   - first:
       213: 7188930153578278880
-    second: char_idle_up
+    second: char_idle_up_0
   - first:
       213: -263089634459758618
-    second: char_idle_rl
+    second: char_idle_rl_0
   - first:
       213: 3455609540856221501
-    second: inventory
+    second: inventory_bar
   - first:
       213: -8877105270654902643
     second: char_walk_down_0
@@ -74,6 +74,39 @@ TextureImporter:
   - first:
       213: -5129541754429850415
     second: char_walk_up_1
+  - first:
+      213: 1571997993387287584
+    second: highlight_block
+  - first:
+      213: -975749167277906879
+    second: axe_0
+  - first:
+      213: 6638901707931224523
+    second: axe_1
+  - first:
+      213: 2881394300597005124
+    second: axe_2
+  - first:
+      213: -6030460287462463701
+    second: tools_bar
+  - first:
+      213: 888032219008879629
+    second: highlighted_slot
+  - first:
+      213: 6174724510220392764
+    second: char_idle_down_1
+  - first:
+      213: 2530064579156712857
+    second: char_idle_up_1
+  - first:
+      213: 4276025015923719601
+    second: char_idle_rl_1
+  - first:
+      213: 2981005580321115988
+    second: pickaxe_back
+  - first:
+      213: -8501138333136526401
+    second: axe_back
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -205,7 +238,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player
+      name: knight
       rect:
         serializedVersion: 2
         x: 279
@@ -355,7 +388,7 @@ TextureImporter:
       name: pickaxe_0
       rect:
         serializedVersion: 2
-        x: 188
+        x: 218
         y: 82
         width: 12
         height: 12
@@ -376,12 +409,12 @@ TextureImporter:
       name: pickaxe_01
       rect:
         serializedVersion: 2
-        x: 208
+        x: 232
         y: 82
-        width: 18
+        width: 17
         height: 16
       alignment: 9
-      pivot: {x: 0.6111111, y: 0}
+      pivot: {x: 0.64705884, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -397,7 +430,7 @@ TextureImporter:
       name: pickaxe_2
       rect:
         serializedVersion: 2
-        x: 232
+        x: 251
         y: 82
         width: 21
         height: 13
@@ -465,7 +498,7 @@ TextureImporter:
         width: 12
         height: 23
       alignment: 9
-      pivot: {x: 0.4166667, y: 0.47826087}
+      pivot: {x: 0.4166667, y: 0.08695652}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -484,9 +517,9 @@ TextureImporter:
         x: 199
         y: 40
         width: 13
-        height: 23
+        height: 24
       alignment: 9
-      pivot: {x: 0.4615385, y: 0.43478262}
+      pivot: {x: 0.4615385, y: 0.13043478}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -499,15 +532,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_idle_down
+      name: char_idle_down_0
       rect:
         serializedVersion: 2
-        x: 221
+        x: 216
         y: 40
         width: 16
         height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08695652}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -520,15 +553,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_idle_up
+      name: char_idle_up_0
       rect:
         serializedVersion: 2
-        x: 241
+        x: 250
         y: 40
         width: 16
         height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08695652}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -541,15 +574,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_idle_rl
+      name: char_idle_rl_0
       rect:
         serializedVersion: 2
-        x: 261
-        y: 40
+        x: 256
+        y: 11
         width: 8
         height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08695652}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -562,11 +595,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: inventory
+      name: inventory_bar
       rect:
         serializedVersion: 2
-        x: 73
-        y: 7
+        x: 45
+        y: 3
         width: 76
         height: 16
       alignment: 0
@@ -590,8 +623,8 @@ TextureImporter:
         y: 12
         width: 14
         height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -612,7 +645,7 @@ TextureImporter:
         width: 14
         height: 24
       alignment: 9
-      pivot: {x: 0.5, y: 0.45833334}
+      pivot: {x: 0.5, y: 0.083333336}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -632,8 +665,8 @@ TextureImporter:
         y: 11
         width: 14
         height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -654,7 +687,7 @@ TextureImporter:
         width: 14
         height: 24
       alignment: 9
-      pivot: {x: 0.5, y: 0.45833334}
+      pivot: {x: 0.5, y: 0.083333336}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -662,6 +695,237 @@ TextureImporter:
       bones: []
       spriteID: 1dcbcaaa3f430d8b0800000000000000
       internalID: -5129541754429850415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: highlight_block
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 38
+        width: 16
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 024e97f98dbd0d510800000000000000
+      internalID: 1571997993387287584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axe_0
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 82
+        width: 13
+        height: 15
+      alignment: 9
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14464865d417572f0800000000000000
+      internalID: -975749167277906879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axe_1
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 82
+        width: 14
+        height: 17
+      alignment: 9
+      pivot: {x: 0.6428572, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc989ffcded122c50800000000000000
+      internalID: 6638901707931224523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axe_2
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 82
+        width: 22
+        height: 14
+      alignment: 9
+      pivot: {x: 0.3181818, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44b6be0a9d4ccf720800000000000000
+      internalID: 2881394300597005124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tools_bar
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 23
+        width: 63
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2723bdb1508f4ca0800000000000000
+      internalID: -6030460287462463701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: highlighted_slot
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 3
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c4023299ce25c00800000000000000
+      internalID: 888032219008879629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: char_idle_down_1
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 40
+        width: 16
+        height: 23
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08695652}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3995991a3701b550800000000000000
+      internalID: 6174724510220392764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: char_idle_up_1
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 40
+        width: 16
+        height: 23
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08695652}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d1f6374589c1320800000000000000
+      internalID: 2530064579156712857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: char_idle_rl_1
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 11
+        width: 8
+        height: 23
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08695652}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd31dcb81e775b30800000000000000
+      internalID: 4276025015923719601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pickaxe_back
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 82
+        width: 12
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5833334, y: 0.3846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45f4f7008c8ae5920800000000000000
+      internalID: 2981005580321115988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axe_back
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 82
+        width: 13
+        height: 15
+      alignment: 9
+      pivot: {x: 0.61538464, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb3e0fa1ab3e50a80800000000000000
+      internalID: -8501138333136526401
       vertices: []
       indices: 
       edges: []
