@@ -13,13 +13,6 @@ public class UseTool : MonoBehaviour
     public Tilemap elevation;
     public Tilemap colliders;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         mPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
