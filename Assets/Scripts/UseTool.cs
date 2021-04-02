@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class UseTool : MonoBehaviour
 {
     public GameObject cursor;
+    public GameObject hands;
     Vector3 mPos;
     Vector3Int cellHovered;
 
@@ -34,10 +35,11 @@ public class UseTool : MonoBehaviour
 
     IEnumerator BreakCoroutine(Vector3Int pos)
     {
-        cursor.GetComponent<Animator>().SetTrigger("Click");
+        hands.GetComponent<Animator>().SetTrigger("Click");
         yield return new WaitForSeconds(.3f);
         if (elevation.GetTile(pos) != null)
         {
+            Debug.Log(elevation.GetTile(pos));
             elevation.SetTile(pos, null);
             colliders.SetTile(pos, null);
         }
@@ -52,9 +54,9 @@ public class UseTool : MonoBehaviour
         yDiff = (yDiff > .5f) ? 1 : (yDiff < -.5f) ? -1 : 0;
         xDiff = (xDiff > .5f) ? 1 : (xDiff < -.5f) ? -1 : 0;
 
-        float angle = Vector2.SignedAngle(Vector2.zero, new Vector2(xDiff, yDiff));
+        float angle = Vector2.SignedAngle(Vector2.up, new Vector2(xDiff, yDiff));
 
-        cursor.transform.rotation = Quaternion.Euler(0, 0, angle);
+        hands.transform.rotation = Quaternion.Euler(0, 0, angle);
         cursor.transform.position = pPos + new Vector3(xDiff, yDiff, 0);
     }
 
