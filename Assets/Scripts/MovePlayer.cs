@@ -30,7 +30,7 @@ public class MovePlayer : MonoBehaviour
         if (hInput < 0)
         {
             sr.flipX = true;
-            backTool.flipX = (Mathf.Abs(hInput)>Mathf.Abs(vInput)) ? true : false;
+            backTool.flipX = (Mathf.Abs(hInput) > Mathf.Abs(vInput)) ? true : false;
         }
         else if(hInput > 0)
         {

@@ -8,12 +8,11 @@ public class UseTool : MonoBehaviour
     public GameObject highlightBlock;
     public GameObject cursor;
     public GameObject hands;
-    Vector3 mPos;
-    Vector3Int cellHovered;
-
     public Tilemap elevation;
     public Tilemap colliders;
 
+    Vector3 mPos;
+    Vector3Int cellHovered;
     Vector3Int playerCell;
 
     void Update()
@@ -23,6 +22,14 @@ public class UseTool : MonoBehaviour
         cellHovered = Vector3Int.FloorToInt(mPos);
         highlightBlock.transform.position = new Vector2(cellHovered.x + .5f, cellHovered.y + .5f);
         playerCell = Vector3Int.FloorToInt(transform.position);
+        if(Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            GetComponent<ToolBar>().SwitchTools(true);
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        {
+            GetComponent<ToolBar>().SwitchTools(false);
+        }
 
         if (Input.GetKey(KeyCode.Mouse0) && Vector3Int.Distance(playerCell, cellHovered)<=1.5)
         {
