@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class Pickup : MonoBehaviour{
     private Inventory inventory;
-    public Tile block;
+    public Tile blockTile;
     private void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
@@ -18,13 +18,16 @@ public class Pickup : MonoBehaviour{
             {
                 if (inventory.slot[i] == null)
                 {
-                    inventory.slot[i] = block;
+                    inventory.slot[i] = blockTile;
                     inventory.amount[i] = 1;
-                    break;
+                    Destroy(gameObject);
+                    return;
                 }
-                else if (inventory.slot[i]== block)
+                else if (inventory.slot[i]== blockTile)
                 {
                     inventory.amount[i] += 1;
+                    Destroy(gameObject);
+                    return;
                 }
             }
         }  
