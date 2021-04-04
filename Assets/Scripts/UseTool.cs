@@ -125,7 +125,7 @@ public class UseTool : MonoBehaviour
     void PlaceBlock(Vector3Int pos)
     {
         Inventory inv = GetComponent<Inventory>();
-        if(elevation.GetTile(pos) == null && colliders.GetTile(pos) == null)
+        if(elevation.GetTile(pos) == null && colliders.GetTile(pos) == null && inv.amount[inv.activeSlot] > 0)
         {
             elevation.SetTile(pos, inv.slot[inv.activeSlot]);
             colliders.SetTile(pos, collTile);
