@@ -76,7 +76,7 @@ TextureImporter:
     second: char_walk_up_1
   - first:
       213: 1571997993387287584
-    second: highlight_block
+    second: highlight_break_block
   - first:
       213: -975749167277906879
     second: axe_0
@@ -107,6 +107,9 @@ TextureImporter:
   - first:
       213: -8501138333136526401
     second: axe_back
+  - first:
+      213: 9116147329686985876
+    second: highlight_place_block
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -451,8 +454,8 @@ TextureImporter:
       name: tree
       rect:
         serializedVersion: 2
-        x: 67
-        y: 50
+        x: 98
+        y: 51
         width: 33
         height: 46
       alignment: 9
@@ -472,7 +475,7 @@ TextureImporter:
       name: tree_cut
       rect:
         serializedVersion: 2
-        x: 100
+        x: 131
         y: 50
         width: 10
         height: 13
@@ -497,8 +500,8 @@ TextureImporter:
         y: 40
         width: 12
         height: 23
-      alignment: 9
-      pivot: {x: 0.4166667, y: 0.08695652}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -518,8 +521,8 @@ TextureImporter:
         y: 40
         width: 13
         height: 24
-      alignment: 9
-      pivot: {x: 0.4615385, y: 0.13043478}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -539,8 +542,8 @@ TextureImporter:
         y: 40
         width: 16
         height: 23
-      alignment: 9
-      pivot: {x: 0.5, y: 0.08695652}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -560,8 +563,8 @@ TextureImporter:
         y: 40
         width: 16
         height: 23
-      alignment: 9
-      pivot: {x: 0.5, y: 0.08695652}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -581,8 +584,8 @@ TextureImporter:
         y: 11
         width: 8
         height: 23
-      alignment: 9
-      pivot: {x: 0.5, y: 0.08695652}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -623,8 +626,8 @@ TextureImporter:
         y: 12
         width: 14
         height: 24
-      alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -644,8 +647,8 @@ TextureImporter:
         y: 12
         width: 14
         height: 24
-      alignment: 9
-      pivot: {x: 0.5, y: 0.083333336}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -665,8 +668,8 @@ TextureImporter:
         y: 11
         width: 14
         height: 24
-      alignment: 9
-      pivot: {x: 0.5, y: 0.125}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -686,8 +689,8 @@ TextureImporter:
         y: 11
         width: 14
         height: 24
-      alignment: 9
-      pivot: {x: 0.5, y: 0.083333336}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -700,7 +703,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: highlight_block
+      name: highlight_break_block
       rect:
         serializedVersion: 2
         x: 45
@@ -833,8 +836,8 @@ TextureImporter:
         y: 40
         width: 16
         height: 23
-      alignment: 9
-      pivot: {x: 0.5, y: 0.08695652}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -854,8 +857,8 @@ TextureImporter:
         y: 40
         width: 16
         height: 23
-      alignment: 9
-      pivot: {x: 0.5, y: 0.08695652}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -875,8 +878,8 @@ TextureImporter:
         y: 11
         width: 8
         height: 23
-      alignment: 9
-      pivot: {x: 0.5, y: 0.08695652}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -926,6 +929,27 @@ TextureImporter:
       bones: []
       spriteID: fb3e0fa1ab3e50a80800000000000000
       internalID: -8501138333136526401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: highlight_place_block
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 46
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c5e1a62bf038e70800000000000000
+      internalID: 9116147329686985876
       vertices: []
       indices: 
       edges: []

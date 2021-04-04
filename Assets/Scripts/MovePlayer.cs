@@ -8,7 +8,6 @@ public class MovePlayer : MonoBehaviour
     public float speed;
 
     public GameObject playerBody;
-    public SpriteRenderer backTool;
     SpriteRenderer sr;
     Animator anim;
 
@@ -30,12 +29,10 @@ public class MovePlayer : MonoBehaviour
         if (hInput < 0)
         {
             sr.flipX = true;
-            backTool.flipX = (Mathf.Abs(hInput) > Mathf.Abs(vInput)) ? true : false;
         }
         else if(hInput > 0)
         {
             sr.flipX = false;
-            backTool.flipX = (Mathf.Abs(hInput) < Mathf.Abs(vInput)) ? true : false;
         }
 
         movement = (Vector2.up * vInput + Vector2.right * hInput) * speed;
@@ -50,14 +47,6 @@ public class MovePlayer : MonoBehaviour
             anim.SetFloat("Idle Vertical", vInput);
         }
 
-        if (vInput > hInput)
-        {
-            backTool.sortingOrder = 3;
-        }
-        else if (vInput < hInput)
-        {
-            backTool.sortingOrder = 1;
-        }
     }
 
     private void FixedUpdate()

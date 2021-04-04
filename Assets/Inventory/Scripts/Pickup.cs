@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using TMPro;
 
 public class Pickup : MonoBehaviour{
     private Inventory inventory;
@@ -19,6 +20,7 @@ public class Pickup : MonoBehaviour{
                 if (inventory.slot[i] == null)
                 {
                     inventory.slot[i] = blockTile;
+                    inventory.UiSlots[i].GetComponent<SpriteRenderer>().sprite = GetComponent<SpriteRenderer>().sprite;
                     inventory.amount[i] = 1;
                     Destroy(gameObject);
                     return;
@@ -26,6 +28,7 @@ public class Pickup : MonoBehaviour{
                 else if (inventory.slot[i]== blockTile)
                 {
                     inventory.amount[i] += 1;
+                    inventory.UiSlots[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(inventory.amount[i].ToString());
                     Destroy(gameObject);
                     return;
                 }
