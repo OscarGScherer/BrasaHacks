@@ -22,8 +22,9 @@ public class ChopTree : MonoBehaviour
         if(state == 5)
         {
             GetComponent<SpriteRenderer>().sprite = choppedSprite;
-            Instantiate(drop, transform.position - Vector3.up, transform.rotation);
+            Instantiate(drop, transform.position, transform.rotation);
             gameObject.tag = "chopped tree";
+            gameObject.GetComponent<Collider2D>().enabled = false;
         }
     }
 }

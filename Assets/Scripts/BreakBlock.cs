@@ -13,7 +13,7 @@ public class BreakBlock : MonoBehaviour
     Vector3Int blockPos;
     public int state = 0;
     SpriteRenderer sr;
-    public GameObject dropPrefabs;
+    public GameObject dropPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +38,7 @@ public class BreakBlock : MonoBehaviour
             elevation.SetTile(blockPos, null);
             colliders.SetTile(blockPos, null);
             playerRef.GetComponent<UseTool>().breakPoint = null;
-            GameObject drop = Instantiate(dropPrefabs, new Vector2(blockPos.x + .5f, blockPos.y + .5f), transform.rotation);
+            GameObject drop = Instantiate(dropPrefab, new Vector2(blockPos.x + .5f, blockPos.y + .5f), transform.rotation);
             Destroy(gameObject);
             return;
         }

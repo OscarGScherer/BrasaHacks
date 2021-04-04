@@ -13,8 +13,8 @@ public class ToolBar : MonoBehaviour
 
     private void Start()
     {
-        tools[0] = 0;
-        tools[1] = 1;
+        tools[0] = -1;
+        tools[1] = -1;
         tools[2] = -1;
         tools[3] = -1;
         UpdateToolBar();

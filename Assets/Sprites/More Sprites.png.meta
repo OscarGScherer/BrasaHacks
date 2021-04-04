@@ -59,6 +59,15 @@ TextureImporter:
   - first:
       213: 1797820524405472021
     second: sword_2
+  - first:
+      213: 1182559651389283353
+    second: sword_back
+  - first:
+      213: 5114997276498825302
+    second: ore_block
+  - first:
+      213: 4975731598597085243
+    second: diamond
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -542,6 +551,69 @@ TextureImporter:
       bones: []
       spriteID: 51b381fdd3423f810800000000000000
       internalID: 1797820524405472021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword_back
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 18
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c94caccbb496010800000000000000
+      internalID: 1182559651389283353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ore_block
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 67
+        width: 16
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6509dcc2cee1cf640800000000000000
+      internalID: 5114997276498825302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: diamond
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 74
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b38d010c6895d0540800000000000000
+      internalID: 4975731598597085243
       vertices: []
       indices: 
       edges: []

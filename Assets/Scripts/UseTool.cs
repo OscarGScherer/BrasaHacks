@@ -7,14 +7,17 @@ public class UseTool : MonoBehaviour
 {
     bool interrupt = false;
 
+    public GameObject[] blockDrops = new GameObject[3];
+    public TileBase[] rockBlocks = new TileBase[2];
+    public TileBase woodBlock;
+
     public GameObject highlightBlock;
-    public Sprite breakBlockHighlight, placeBlockHighlight;
+    public Sprite HighlightBlockSprite;
     public GameObject cursor;
     public GameObject hands;
     public Tilemap elevation;
     public Tilemap colliders;
     public Tile collTile;
-    public LayerMask enemyLayer;
 
     public GameObject breakPointPrefab;
     public GameObject breakPoint = null;
@@ -25,11 +28,23 @@ public class UseTool : MonoBehaviour
 
     int equippedTool = 0;
 
+    private void Start()
+    {
+        equippedTool = GetComponent<ToolBar>().tools[0];
+    }
+
     void Update()
     {
         mPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 1);
-        cellHovered = Vector3Int.FloorToInt(mPos);
-        highlightBlock.transform.position = new Vector2(cellHovered.x + .5f, cellHovered.y + .5f);
+        if (elevation.GetTile(cellHovered) != null)
+        {
+            highlightBlock.GetComponent<SpriteRenderer>().enabled = true;
+            highlightBlock.transform.position = new Vector2(cellHovered.x + .5f, cellHovered.y + .5f);
+        }
+        else
+        {
+            highlightBlock.GetComponent<SpriteRenderer>().enabled = false;
+        }
         playerCell = Vector3Int.FloorToInt(transform.position);
 
         float angle = Vector2.SignedAngle(Vector2.up, new Vector2(mPos.x, mPos.y) - new Vector2(transform.position.x, transform.position.y));
@@ -45,6 +60,7 @@ public class UseTool : MonoBehaviour
 
         if (!interrupt)
         {
+            cellHovered = Vector3Int.FloorToInt(mPos);
             if (Input.GetAxis("Mouse ScrollWheel") > 0)
             {
                 GetComponent<ToolBar>().SwitchTools(true);
@@ -94,11 +110,15 @@ public class UseTool : MonoBehaviour
     {
         if(tool == 0)
         {
-            StartCoroutine(BreakCoroutine(pos));
+            StartCoroutine(HitPickaxe(pos));
         }
         else if(tool == 1)
         {
-            StartCoroutine(HitAxeCoroutine());
+            StartCoroutine(HitAxeCoroutine(pos));
+        }
+        else if (tool == 2)
+        {
+            StartCoroutine(SwingSword());
         }
     }
 
@@ -114,51 +134,110 @@ public class UseTool : MonoBehaviour
 
     }
 
-    IEnumerator HitAxeCoroutine()
+    IEnumerator SwingSword()
     {
         interrupt = true;
         hands.GetComponent<Animator>().SetTrigger("Click");
         yield return new WaitForSeconds(.2f);
         Vector2 cPos = cursor.transform.position;
-        Collider2D coll = Physics2D.OverlapArea(new Vector2(cPos.x - .5f, cPos.y - .5f), new Vector2(cPos.x + .5f, cPos.y + .5f));
-        if(coll.tag == "tree")
+        Collider2D[] enemies = Physics2D.OverlapAreaAll(new Vector2(cPos.x - 1, cPos.y - .5f), new Vector2(cPos.x + 1, cPos.y + .5f));
+        foreach (Collider2D enemy in enemies)
         {
-            coll.GetComponent<ChopTree>().Hit();
+            if (enemy.tag == "enemy")
+            {
+                enemy.GetComponent<EnemyHealth>().Hit(4);
+                enemy.GetComponent<SlimeMove>().Knockback(10, transform.position);
+            }
         }
         interrupt = false;
-
     }
 
-    IEnumerator BreakCoroutine(Vector3Int pos)
+    IEnumerator HitAxeCoroutine(Vector3Int pos)
     {
         interrupt = true;
-        //float angle = Vector2.SignedAngle(Vector2.up, new Vector2(cellHovered.x, cellHovered.y) - new Vector2(playerCell.x, playerCell.y));
-        //hands.transform.rotation = Quaternion.Euler(0, 0, angle);
         hands.GetComponent<Animator>().SetTrigger("Click");
         yield return new WaitForSeconds(.2f);
-        if (elevation.GetTile(pos) != null && breakPoint == null)
+        if (elevation.GetTile(pos) != null && elevation.GetTile(pos) == woodBlock)
         {
-            MakeBreakPoint();
+
+            if (breakPoint == null)
+            {
+                MakeBreakPoint(blockDrops[2]);
+            }
+            else if (breakPoint != null && cellHovered == Vector3Int.FloorToInt(breakPoint.transform.position - Vector3.up))
+            {
+                breakPoint.GetComponent<BreakBlock>().Hit();
+            }
+            else if (breakPoint != null && cellHovered != Vector3Int.FloorToInt(breakPoint.transform.position - Vector3.up))
+            {
+                Destroy(breakPoint);
+                MakeBreakPoint(blockDrops[2]);
+            }
+
         }
-        else if(breakPoint != null && cellHovered == Vector3Int.FloorToInt(breakPoint.transform.position - Vector3.up))
+        else
         {
-            breakPoint.GetComponent<BreakBlock>().Hit();
+            Vector2 cPos = cursor.transform.position;
+            Collider2D[] targets = Physics2D.OverlapAreaAll(new Vector2(cPos.x - .5f, cPos.y - .5f), new Vector2(cPos.x + .5f, cPos.y + .5f));
+            foreach (Collider2D coll in targets)
+            {
+                if (coll.tag == "tree")
+                {
+                    coll.GetComponent<ChopTree>().Hit();
+                }
+                else if (coll.tag == "enemy")
+                {
+                    coll.GetComponent<EnemyHealth>().Hit(2);
+                    coll.GetComponent<SlimeMove>().Knockback(4, transform.position);
+                }
+            }
         }
-        else if(elevation.GetTile(pos) != null && breakPoint != null && cellHovered != Vector3Int.FloorToInt(breakPoint.transform.position - Vector3.up))
+        interrupt = false;
+
+    }
+
+    IEnumerator HitPickaxe(Vector3Int pos)
+    {
+        interrupt = true;
+        hands.GetComponent<Animator>().SetTrigger("Click");
+        yield return new WaitForSeconds(.2f);
+        if (elevation.GetTile(pos) != null && IndexOfOccurence(rockBlocks, elevation.GetTile(pos)) != -1)
         {
-            Destroy(breakPoint);
-            MakeBreakPoint();
+            if (breakPoint == null)
+            {
+                MakeBreakPoint(blockDrops[IndexOfOccurence(rockBlocks, elevation.GetTile(pos))]);
+            }
+            else if (breakPoint != null && cellHovered == Vector3Int.FloorToInt(breakPoint.transform.position - Vector3.up))
+            {
+                breakPoint.GetComponent<BreakBlock>().Hit();
+            }
+            else if (breakPoint != null && cellHovered != Vector3Int.FloorToInt(breakPoint.transform.position - Vector3.up))
+            {
+                Destroy(breakPoint);
+                MakeBreakPoint(blockDrops[IndexOfOccurence(rockBlocks, elevation.GetTile(pos))]);
+            }
+
         }
         interrupt = false;
     }
 
-    void MakeBreakPoint()
+    void MakeBreakPoint(GameObject drop)
     {
         breakPoint = Instantiate(breakPointPrefab, new Vector3(cellHovered.x + .5f, cellHovered.y + 1.25f, 0), transform.rotation);
         BreakBlock bb = breakPoint.GetComponent<BreakBlock>();
+        bb.dropPrefab = drop;
         bb.elevation = elevation;
         bb.colliders = colliders;
         bb.playerRef = gameObject;
+    }
+
+    int IndexOfOccurence(TileBase[] array, TileBase block)
+    {
+        for(int i = 0; i<array.Length; i++)
+        {
+            if (array[i] == block) return i;
+        }
+        return -1;
     }
 
 }

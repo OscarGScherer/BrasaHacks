@@ -109,10 +109,16 @@ TextureImporter:
     second: axe_back
   - first:
       213: 9116147329686985876
-    second: highlight_place_block
+    second: wood_block
   - first:
       213: -8365750937214216071
     second: unbreakable
+  - first:
+      213: 4649150321829457272
+    second: fancy
+  - first:
+      213: 6077751805537155827
+    second: pathway
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -353,7 +359,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 25
-        y: 50
+        y: 40
         width: 16
         height: 16
       alignment: 0
@@ -937,15 +943,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: highlight_place_block
+      name: wood_block
       rect:
         serializedVersion: 2
         x: 65
         y: 38
         width: 16
         height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2857143}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -974,6 +980,48 @@ TextureImporter:
       bones: []
       spriteID: 97894f3a8d1e6eb80800000000000000
       internalID: -8365750937214216071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fancy
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 60
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87da900e599158040800000000000000
+      internalID: 4649150321829457272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pathway
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 23
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3faf70ad013885450800000000000000
+      internalID: 6077751805537155827
       vertices: []
       indices: 
       edges: []
