@@ -23,7 +23,8 @@ public class PlayerHealth : MonoBehaviour
         {
             transform.position = new Vector2(28, -7);
             health = 20;
-            lastRoom.GetComponent<SpawnEnemies>().Spawn();
+            lastRoom.GetComponent<SpawnEnemies>().ReSpawn();
+            GetComponent<Inventory>().killCount = 0;
         }
         healthBar.value = health;
     }

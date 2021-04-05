@@ -38,7 +38,7 @@ public class SlimeMove : MonoBehaviour
     {
         if (!moving)
         {
-            if (Vector2.Distance(transform.position, player.position) < 4)
+            if (Vector2.Distance(transform.position, player.position) < 7)
             {
                 StartCoroutine(Move(player.position));
             }

@@ -14,6 +14,7 @@ public class Inventory : MonoBehaviour {
     public Tile[] slot = new Tile[5];
     public int[] amount = new int[5];
     public int activeSlot = 0;
+    public int killCount;
 
     private void Start()
     {
