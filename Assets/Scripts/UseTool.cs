@@ -157,7 +157,7 @@ public class UseTool : MonoBehaviour
         interrupt = true;
         hands.GetComponent<Animator>().SetTrigger("Click");
         yield return new WaitForSeconds(.2f);
-        if (elevation.GetTile(pos) != null && elevation.GetTile(pos) == woodBlock)
+        if (elevation.GetTile(pos) != null && elevation.GetTile(pos) == woodBlock && Vector3.Distance(transform.position, pos) < 1.5f)
         {
 
             if (breakPoint == null)
@@ -201,7 +201,7 @@ public class UseTool : MonoBehaviour
         interrupt = true;
         hands.GetComponent<Animator>().SetTrigger("Click");
         yield return new WaitForSeconds(.2f);
-        if (elevation.GetTile(pos) != null && IndexOfOccurence(rockBlocks, elevation.GetTile(pos)) != -1)
+        if (elevation.GetTile(pos) != null && IndexOfOccurence(rockBlocks, elevation.GetTile(pos)) != -1 && Vector3.Distance(transform.position, pos) < 1.5f)
         {
             if (breakPoint == null)
             {
